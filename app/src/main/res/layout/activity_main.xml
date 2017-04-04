@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.sdacademy.slowinski.andrzej.mycv.MainActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/mainActivityTelephoneView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/primary_dark">
+
+        <ImageView
+            android:id="@+id/photoMe"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/gerald" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/dataLayoutViev"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:background="@color/divider"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:background="?android:selectableItemBackground"
+            android:padding="10dp"
+            android:id="@+id/phoneNumberViev"
+            android:layout_width="match_parent"
+            android:layout_height="70dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/accent"
+                android:fillColor="@color/icons"
+                android:src="@drawable/ic_phone_black_24dp" />
+
+            <TextView
+                android:id="@+id/phoneText"
+                android:layout_width="match_parent"
+                android:background="@color/primary_dark"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="12dp"
+                android:layout_marginStart="12dp"
+                android:gravity="center_vertical"
+                android:text="(+48)68376649"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:background="?android:selectableItemBackground"
+            android:padding="10dp"
+            android:id="@+id/emailView"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/accent"
+                android:fillColor="@color/icons"
+                android:src="@drawable/ic_contact_mail_black_24dp" />
+
+            <TextView
+                android:background="@color/primary_dark"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="12dp"
+                android:text="andrzejslowinski93@gmail.com"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:background="?android:selectableItemBackground"
+            android:padding="10dp"
+            android:id="@+id/linkedinView"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/accent"
+                android:src="@drawable/ic_cloud_black_24dp" />
+
+            <TextView
+                android:background="@color/primary_dark"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="12sp"
+                android:text="https://www.linkedin.com/in/andrzej-s%C5%82owi%C5%84ski-765681131/"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
