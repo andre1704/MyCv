@@ -25,7 +25,13 @@ public class CvRow extends LinearLayout {
         TextView textField = setupText(context, cvItem);
         addViews(iconField, textField);
 
-        cvItem.performanceAction(context);
+        this.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cvItem.performanceAction(context);
+            }
+        });
+        ;
 
     }
 
