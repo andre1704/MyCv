@@ -3,6 +3,7 @@ package com.sdacademy.slowinski.andrzej.mycv;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.drawable.GradientDrawable;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutCompat;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
@@ -17,32 +18,47 @@ import android.widget.TextView;
  */
 
 public class CvRow extends LinearLayout {
-    public CvRow(Context context, String text, int icon){
+    public CvRow(final Context context, final CvItem cvItem) {
         super(context);
-        this.setLayoutParams(new LinearLayoutCompat.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,dpToPx(48)));
-        this.setPadding(pxToDp(16),0,pxToDp(16),0);
+        setupLayout(context);
+        ImageView iconField = setupIcon(context, cvItem);
+        TextView textField = setupText(context, cvItem);
+        addViews(iconField, textField);
+
+        cvItem.performanceAction(context);
+
+    }
+
+    private void setupLayout(Context context) {
+        this.setLayoutParams(new LinearLayoutCompat.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, convertDpToPixel(48, context)));
+        this.setPadding(convertPixelsToDp(16, context), 0, convertPixelsToDp(16, context), 0);
         this.setOrientation(LinearLayout.HORIZONTAL);
+    }
 
-        ImageView iconField=new ImageView(context);
-        iconField.setImageResource(icon);
-        LinearLayoutCompat.LayoutParams iconFIeldParams = new LinearLayoutCompat.LayoutParams(dpToPx(24), dpToPx(24));
-        iconField.setLayoutParams(iconFIeldParams);
-        iconFIeldParams.gravity=Gravity.CENTER_VERTICAL;
-
-
-        TextView textField=new TextView(context);
-        textField.setText(text);
-        textField.setTextSize(16);
-        textField.setLayoutParams(new LinearLayoutCompat.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,dpToPx(48)));
-        textField.setPadding(dpToPx(32),0,0,0);
-        textField.setGravity(Gravity.CENTER_VERTICAL);
-
+    private void addViews(ImageView iconField, TextView textField) {
         this.addView(iconField);
         this.addView(textField);
+    }
 
+    @NonNull
+    private TextView setupText(Context context, CvItem cvItem) {
+        TextView textField = new TextView(context);
+        textField.setText(cvItem.getCaption());
+        textField.setTextSize(16);
+        textField.setLayoutParams(new LinearLayoutCompat.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, convertDpToPixel(48, context)));
+        textField.setPadding(convertDpToPixel(32, context), 0, 0, 0);
+        textField.setGravity(Gravity.CENTER_VERTICAL);
+        return textField;
+    }
 
-
-
+    @NonNull
+    private ImageView setupIcon(Context context, CvItem cvItem) {
+        ImageView iconField = new ImageView(context);
+        iconField.setImageResource(cvItem.getIcon());
+        LayoutParams iconFIeldParams = new LayoutParams(convertDpToPixel(24, context), convertDpToPixel(24, context));
+        iconFIeldParams.gravity = Gravity.CENTER_VERTICAL;
+        iconField.setLayoutParams(iconFIeldParams);
+        return iconField;
     }
 
     private int dpToPx(int dp) {
@@ -55,18 +71,18 @@ public class CvRow extends LinearLayout {
         return Math.round(px / (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT));
     }
 
-    public static float convertDpToPixel(float dp, Context context){
+    public static int convertDpToPixel(float dp, Context context) {
         Resources resources = context.getResources();
         DisplayMetrics metrics = resources.getDisplayMetrics();
-        float px = dp * ((float)metrics.densityDpi / DisplayMetrics.DENSITY_DEFAULT);
+        int px = (int) (dp * ((float) metrics.densityDpi / DisplayMetrics.DENSITY_DEFAULT));
         return px;
     }
 
 
-    public static float convertPixelsToDp(float px, Context context){
+    public static int convertPixelsToDp(float px, Context context) {
         Resources resources = context.getResources();
         DisplayMetrics metrics = resources.getDisplayMetrics();
-        float dp = px / ((float)metrics.densityDpi / DisplayMetrics.DENSITY_DEFAULT);
+        int dp = (int) (px / ((float) metrics.densityDpi / DisplayMetrics.DENSITY_DEFAULT));
         return dp;
     }
 }
