@@ -1,4 +1,4 @@
-package com.sdacademy.slowinski.andrzej.mycv;
+package com.sdacademy.slowinski.andrzej.mycv.model;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,22 +8,22 @@ import android.net.Uri;
  * Created by RENT on 2017-04-05.
  */
 
-public class PhoneItem extends CvItem {
-
-    private  final String phoneNumber="663076649";
+public class WebItem extends CvItem {
     private Uri uri;
 
-    public PhoneItem(String caption, int icon) {
-
+    public WebItem(String caption, int icon, String url) {
         super(caption, icon);
-        this.uri = Uri.parse("tel:"+phoneNumber);
+        uri = Uri.parse(url);
     }
-
 
     @Override
     public void performanceAction(Context context) {
-        Intent intent = new Intent(Intent.ACTION_DIAL);
+
+
+        Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(uri);
         context.startActivity(intent);
+
+
     }
 }

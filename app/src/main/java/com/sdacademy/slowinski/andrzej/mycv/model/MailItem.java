@@ -1,9 +1,8 @@
-package com.sdacademy.slowinski.andrzej.mycv;
+package com.sdacademy.slowinski.andrzej.mycv.model;
 
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.util.Log;
 
 /**
  * Created by RENT on 2017-04-05.

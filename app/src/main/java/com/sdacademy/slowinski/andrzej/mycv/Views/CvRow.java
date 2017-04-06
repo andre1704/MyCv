@@ -1,8 +1,7 @@
-package com.sdacademy.slowinski.andrzej.mycv;
+package com.sdacademy.slowinski.andrzej.mycv.Views;
 
 import android.content.Context;
 import android.content.res.Resources;
-import android.graphics.drawable.GradientDrawable;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutCompat;
 import android.util.DisplayMetrics;
@@ -12,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.sdacademy.slowinski.andrzej.mycv.model.CvItem;
 
 /**
  * Created by RENT on 2017-04-04.

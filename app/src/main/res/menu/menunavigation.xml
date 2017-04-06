@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigationMenuContact"
+        android:icon="@drawable/ic_contact_phone_black_24dp"
+        android:title="Kontakt" />
+    <item
+        android:id="@+id/navigationMenuSkills"
+        android:icon="@drawable/ic_laptop_mac_black_24dp"
+        android:title="Umiejętności" />
+    <item
+        android:id="@+id/navigationMenuHobby"
+        android:icon="@drawable/ic_star_black_24dp"
+        android:title="Hobby" />
+
+    <item
+        android:id="@+id/navigationMenuExperience"
+        android:icon="@drawable/ic_work_black_24dp"
+        android:title="Doświadczenie" />
+    <item
+        android:id="@+id/navigationMenuEducation"
+        android:icon="@drawable/ic_school_black_24dp"
+        android:title="Wykształcenie" />
+
+
+
+</menu>

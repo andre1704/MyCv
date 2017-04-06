@@ -1,46 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
+<android.support.v4.widget.DrawerLayout android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.sdacademy.slowinski.andrzej.mycv.MainActivity">
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
-    <RelativeLayout
-        android:id="@+id/mainActivityTelephoneView"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_main"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@color/primary_dark">
-
-        <ImageView
-            android:id="@+id/photoMe"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
-            android:layout_centerInParent="true"
-            android:src="@drawable/gerald" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.sdacademy.slowinski.andrzej.mycv.MainActivity">
 
 
-    </RelativeLayout>
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:layout_weight="2"
-    android:background="@color/divider">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:background="@color/divider"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
 
-    <LinearLayout
-        android:id="@+id/dataLayoutViev"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="vertical">
+        </android.support.v7.widget.Toolbar>
 
+        <RelativeLayout
+            android:id="@+id/mainActivityTelephoneView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/primary_dark">
 
+            <ImageView
+                android:id="@+id/photoMe"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/ic_launcher" />
+        </RelativeLayout>
 
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:background="@color/divider">
 
+            <LinearLayout
+                android:id="@+id/dataLayoutViev"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="vertical">
 
+            </LinearLayout>
+        </ScrollView>
     </LinearLayout>
-</ScrollView>
 
-</LinearLayout>
+    <android.support.design.widget.NavigationView
+        android:id="@+id/navigationViewww"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/navigation_view_header"
+        app:menu="@menu/menunavigation"
+        />
+</android.support.v4.widget.DrawerLayout>

@@ -1,4 +1,4 @@
-package com.sdacademy.slowinski.andrzej.mycv;
+package com.sdacademy.slowinski.andrzej.mycv.model;
 
 import android.content.Context;
 
