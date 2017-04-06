@@ -24,141 +24,23 @@
 
 
     </RelativeLayout>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="2"
+    android:background="@color/divider">
 
     <LinearLayout
         android:id="@+id/dataLayoutViev"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"
-        android:background="@color/divider"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:background="?android:selectableItemBackground"
-            android:padding="10dp"
-            android:id="@+id/phoneNumberViev"
-            android:layout_width="match_parent"
-            android:layout_height="70dp">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:fillColor="@color/icons"
-                android:src="@drawable/ic_phone_black_24dp" />
-
-            <TextView
-                android:textColor="@color/icons"
-                android:id="@+id/phoneText"
-                android:layout_width="match_parent"
-                android:background="@color/accent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="12dp"
-                android:layout_marginStart="12dp"
-                android:gravity="center_vertical"
-                android:text="(+48)68376649"
-                android:textSize="20sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:background="?android:selectableItemBackground"
-            android:padding="10dp"
-            android:id="@+id/emailView"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:orientation="horizontal">
-
-            <ImageView
-
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:fillColor="@color/icons"
-                android:src="@drawable/ic_contact_mail_black_24dp" />
-
-            <TextView
-                android:textColor="@color/icons"
-                android:background="@color/accent"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="12dp"
-                android:text="andrzejslowinski93@gmail.com"
-                android:textSize="20sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:background="?android:selectableItemBackground"
-            android:padding="10dp"
-            android:id="@+id/linkedinView"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:src="@drawable/ic_cloud_black_24dp" />
-
-            <TextView
-                android:textColor="@color/icons"
-                android:background="@color/accent"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="12sp"
-                android:text="https://www.linkedin.com/in/andrzej-s%C5%82owi%C5%84ski-765681131/"
-                android:textSize="20sp" />
-
-        </LinearLayout>
-        <LinearLayout
-            android:background="?android:selectableItemBackground"
-            android:padding="10dp"
-            android:id="@+id/homeView"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:src="@drawable/ic_location_city_black_24dp" />
-
-            <TextView
-                android:textColor="@color/icons"
-                android:background="@color/accent"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="12sp"
-                android:text="Kolumba 23/5 Wrocław"
-                android:textSize="20sp" />
-
-        </LinearLayout>
-        <LinearLayout
-            android:background="?android:selectableItemBackground"
-            android:padding="10dp"
-            android:id="@+id/githubView"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:src="@drawable/ic_memory_black_24dp" />
-
-            <TextView
-                android:textColor="@color/icons"
-                android:background="@color/accent"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="12sp"
-                android:text="https://github.com/andre1704/MyCv"
-                android:textSize="20sp" />
-
-        </LinearLayout>
 
 
 
 
     </LinearLayout>
-
+</ScrollView>
 
 </LinearLayout>

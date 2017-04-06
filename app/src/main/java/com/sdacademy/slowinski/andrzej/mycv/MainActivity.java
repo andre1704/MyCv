@@ -18,18 +18,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        LinearLayout linearLayout=new CvRow(this,);
-        setContentView(linearLayout);
-
-
-        CvRow phoneView= new CvRow(this,new PhoneItem("phone",R.drawable.ic_phone_black_24dp ));
-        CvRow webView= new CvRow(this,new WebItem("git",R.drawable.ic_cloud_black_24dp,"https://github.com/andre1704/MyCv"));
-        CvRow mailView= new CvRow(this,new MailItem("mail",R.drawable.ic_contact_mail_black_24dp ));
-
-        linearLayout.addView(phoneView);
-        linearLayout.addView(webView);
-        linearLayout.addView(mailView);
-
+        CvRow phoneView = new CvRow(this, new PhoneItem("phone", R.drawable.ic_phone_black_24dp));
+        CvRow webView = new CvRow(this, new WebItem("git", R.drawable.ic_cloud_black_24dp, "https://github.com/andre1704/MyCv"));
+        CvRow mailView = new CvRow(this, new MailItem("mail", R.drawable.ic_contact_mail_black_24dp));
+        LinearLayout linearLayout1 = (LinearLayout) findViewById(R.id.dataLayoutViev);
+        linearLayout1.addView(phoneView);
+        linearLayout1.addView(mailView);
 
 
     }
