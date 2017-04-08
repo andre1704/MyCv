@@ -2,11 +2,15 @@ package com.sdacademy.slowinski.andrzej.mycv;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -21,14 +25,21 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private static final String TAG = MainActivity.class.getSimpleName();
-    @BindView(R.id.dataLayoutViev)
-    LinearLayout rowHolder;
+//    @BindView(R.id.dataLayoutViev)
+//    LinearLayout rowHolder;
+
+    @BindView(R.id.mainActivityContainer)
+    FrameLayout container;
+
 
     @BindView(R.id.navigationViewww)
     NavigationView navigationView;
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
+
+    @BindView(R.id.drawerLayout)
+    DrawerLayout drawerLayout;
 
 
     @Override
@@ -38,34 +49,41 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ButterKnife.bind(this);
 
         navigationView.setNavigationItemSelectedListener(this);
-        setupRows();
+        navigationView.setCheckedItem(R.id.navigationMenuContact);
+        navigationView.getMenu().performIdentifierAction(R.id.navigationMenuContact, 0);
+
+//        setupRows();
+
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.mainActivityContainer,ContactFragment.newInstance())
+                .commit();
+        setSupportActionBar(toolbar);
 
 
     }
 
-    private void setupRows() {
-        CvRow phoneView = new CvRow(this, new PhoneItem("phone", R.drawable.ic_phone_black_24dp));
-        CvRow gitView = new CvRow(this, new WebItem("git", R.drawable.ic_cloud_black_24dp, "https://github.com/andre1704/MyCv"));
-        CvRow mailView = new CvRow(this, new MailItem("mail", R.drawable.ic_contact_mail_black_24dp));
-        CvRow locationView = new CvRow(this, new WebItem("adres domowy", R.drawable.ic_location_city_black_24dp, "https://www.google.pl/maps/place/Krzysztofa+Kolumba+5,+51-503+Wroc%C5%82aw/@51.112385,17.1167235,17z/data=!3m1!4b1!4m5!3m4!1s0x470fe80902774f13:0xe8f953eb03c77c8c!8m2!3d51.112385!4d17.1189122"));
 
-
-        rowHolder.addView(phoneView);
-        rowHolder.addView(gitView);
-        rowHolder.addView(locationView);
-        rowHolder.addView(mailView);
-
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_activity_menu,menu);
+        getMenuInflater().inflate(R.menu.main_activity_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        drawerLayout.closeDrawer(Gravity.LEFT);
         toolbar.setTitle(item.getTitle());
+
+        for (int i = 0; i < navigationView.getMenu().size(); i++) {
+            if (navigationView.getMenu().getItem(i).isChecked()) {
+                navigationView.getMenu().getItem(i).setChecked(false);
+
+            }
+        }
+        item.setChecked(true);
+
+
         switch (item.getItemId()) {
             case R.id.navigationMenuContact:
                 Toast.makeText(this, "Kontakt", Toast.LENGTH_SHORT).show();
