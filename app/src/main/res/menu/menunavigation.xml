@@ -21,6 +21,10 @@
         android:id="@+id/navigationMenuEducation"
         android:icon="@drawable/ic_school_black_24dp"
         android:title="Wykształcenie" />
+    <item
+        android:id="@+id/navigationMenuFormula"
+        android:icon="@drawable/ic_mail_outline_black_24dp"
+        android:title="Formularz" />
 
 
 

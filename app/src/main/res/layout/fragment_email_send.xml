@@ -1,0 +1,26 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="com.sdacademy.slowinski.andrzej.mycv.EmailSendFragment">
+
+    <EditText
+        android:id="@+id/sendFragmentSubject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Wpisz temat" />
+
+    <EditText
+        android:id="@+id/sendFragmentMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Wiadomosc" />
+
+    <Button
+        android:id="@+id/sendFragmentButton"
+        style="@style/Base.Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Wyślij" />
+</LinearLayout>
