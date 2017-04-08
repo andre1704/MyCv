@@ -3,28 +3,28 @@
     <item
         android:id="@+id/navigationMenuContact"
         android:icon="@drawable/ic_contact_phone_black_24dp"
-        android:title="Kontakt" />
+        android:title="@string/contact" />
     <item
         android:id="@+id/navigationMenuSkills"
         android:icon="@drawable/ic_laptop_mac_black_24dp"
-        android:title="Umiejętności" />
+        android:title="@string/skils" />
     <item
         android:id="@+id/navigationMenuHobby"
         android:icon="@drawable/ic_star_black_24dp"
-        android:title="Hobby" />
+        android:title="@string/hobby" />
 
     <item
         android:id="@+id/navigationMenuExperience"
         android:icon="@drawable/ic_work_black_24dp"
-        android:title="Doświadczenie" />
+        android:title="@string/expierience" />
     <item
         android:id="@+id/navigationMenuEducation"
         android:icon="@drawable/ic_school_black_24dp"
-        android:title="Wykształcenie" />
+        android:title="@string/education" />
     <item
         android:id="@+id/navigationMenuFormula"
         android:icon="@drawable/ic_mail_outline_black_24dp"
-        android:title="Formularz" />
+        android:title="@string/fourmula" />
 
 
 

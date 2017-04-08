@@ -42,7 +42,7 @@ public class ContactFragment extends Fragment {
     public void setupRows() {
 
         CvRow table[] = new CvRow[]{
-                new CvRow(getActivity(), new PhoneItem("phone", R.drawable.ic_phone_black_24dp)),
+                new CvRow(getActivity(), new PhoneItem()),
                 new CvRow(getActivity(), new WebItem("git", R.drawable.ic_cloud_black_24dp, "https://github.com/andre1704/MyCv")),
                 new CvRow(getActivity(), new MailItem("mail", R.drawable.ic_contact_mail_black_24dp)),
                 new CvRow(getActivity(), new WebItem("adres domowy", R.drawable.ic_location_city_black_24dp, "https://www.google.pl/maps/place/Krzysztofa+Kolumba+5,+51-503+Wroc%C5%82aw/@51.112385,17.1167235,17z/data=!3m1!4b1!4m5!3m4!1s0x470fe80902774f13:0xe8f953eb03c77c8c!8m2!3d51.112385!4d17.1189122"))

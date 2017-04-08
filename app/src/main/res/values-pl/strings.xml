@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MyCv</string>
+    <string name="contact">Kontakt</string>
+    <string name="education">Wykształcenie</string>
+    <string name="expierience">Doświadczenie</string>
+    <string name="fourmula">Formularz</string>
+    <string name="skils">Umiejętności</string>
+</resources>
